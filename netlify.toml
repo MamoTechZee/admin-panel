@@ -1,6 +1,5 @@
 # example netlify.toml
 [build]
-  command = "yarn install --force"
   command = "yarn run build"
   functions = "netlify/functions"
   publish = "dist"
