@@ -31,14 +31,14 @@
                         style="--el-switch-on-color: #13ce66; --el-switch-off-color: #ff4949" />
                 </el-table-column>
                 <el-table-column label="Action">
-                    <router-link to="/user/edit" class="edit-btn">
+                    <router-link to="/advertisment/edit" class="edit-btn">
                         <el-button type="primary">
                             <el-icon>
                                 <Edit />
                             </el-icon>
                         </el-button>
                     </router-link>
-                    <router-link to="/user/edit" class="edit-btn">
+                    <router-link to="/advertisment/edit" class="edit-btn">
                         <el-button type="primary">
                             <el-icon>
                                 <Delete />
