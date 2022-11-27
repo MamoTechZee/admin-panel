@@ -17,20 +17,20 @@
             <el-form-item label="E-mail" class="w-2/6">
                 <el-input placeholder="Please input"></el-input>
             </el-form-item>
-            <el-form-item label="Дата регистрации" class="w-2/6">
-                <el-date-picker type="datetime" placeholder="Select date and time">
+            <el-form-item label="Date of registration" class="w-2/6">
+                <el-date-picker type="datetime" v-model="registerDate" placeholder="Select date and time">
                 </el-date-picker>
             </el-form-item>
             <el-form-item label="Date activation subscription" class="w-2/6">
-                <el-date-picker type="datetime" placeholder="Select date and time">
+                <el-date-picker type="datetime" v-model="activationDate" placeholder="Select date and time">
                 </el-date-picker>
             </el-form-item>
             <el-form-item label="Date expiration subscription" class="w-2/6">
-                <el-date-picker type="datetime" placeholder="Select date and time">
+                <el-date-picker type="datetime" v-model="subscriptionDate" placeholder="Select date and time">
                 </el-date-picker>
             </el-form-item>
             <el-form-item label="Status">
-                <el-switch class="ml-2" style="--el-switch-on-color: #13ce66; --el-switch-off-color: #ff4949" />
+                <el-switch v-model="status" class="ml-2" style="--el-switch-on-color: #13ce66; --el-switch-off-color: #ff4949" />
             </el-form-item>
         </el-form>
     </el-container>
@@ -77,6 +77,10 @@ import { ref } from 'vue'
 import { Search, More, Edit, Delete } from '@element-plus/icons';
 import { ElContainer, ElIcon, ElButton, ElAvatar, ElTable, ElTableColumn, ElFormItem, ElUpload, ElDatePicker, ElCard, ElPagination, ElInput, ElForm, ElSwitch } from "element-plus"
 const input1 = ref('')
+const status = ref(true);
+const registerDate = ref('')
+const subscriptionDate = ref('')
+const activationDate = ref('')
 const radio1 = { radio1: 'New York' }
 function handleRemove(file, fileList) {
     console.log(file, fileList);

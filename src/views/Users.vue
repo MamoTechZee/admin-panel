@@ -112,6 +112,10 @@ const tableData = [
 
 .action{
     width: 10% !important;
+    align-items: center;
+    width: 13% !important;
+    justify-content: flex-end;
+    display: flex;
 }
 
 .action-btns {
