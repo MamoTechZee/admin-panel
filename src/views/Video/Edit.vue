@@ -3,6 +3,15 @@ import { ref } from 'vue'
 import { Search, More, Edit, Delete } from '@element-plus/icons';
 import { ElContainer, ElButton,  ElInput, ElForm, ElSwitch, ElFormItem, ElRadioGroup, ElSelect, ElDatePicker, ElRadioButton,ElUpload } from "element-plus"
 const input1 = ref('')
+const input2 = ref('')
+const input3 = ref('')
+const input4 = ref('')
+const input5 = ref('')
+const input6 = ref('')
+const input7 = ref('')
+const status = ref(true);
+const releaseDate = ref('')
+const endDate = ref('')
 const radio1 = { radio1:'New York'}
 function handleRemove(file, fileList) {
     console.log(file, fileList);
@@ -120,13 +129,13 @@ const tableData = [
     <el-container class="details-box" style="background-color: white; padding: 1rem;align-items: center;">
         <el-form ref="form"  :label-position="'left'" label-width="120px" class="w-full">
             <el-form-item label="Activity name" class="w-full">
-                <el-input placeholder="Please input"></el-input>
+                <el-input v-model="input1" placeholder="Please input"></el-input>
             </el-form-item>
             <el-form-item label="Description" class="w-full">
-                <el-input type="textarea" :rows="3"></el-input>
+                <el-input type="textarea" v-model="input2" :rows="3"></el-input>
             </el-form-item>
             <el-form-item label="Keywords" class="w-full">
-                <el-input placeholder="Please input"></el-input>
+                <el-input v-model="input3" placeholder="Please input"></el-input>
             </el-form-item>
         </el-form>
     </el-container>
@@ -144,13 +153,13 @@ const tableData = [
             </el-upload>
 
             <el-form-item label="ID" class="w-2/6">
-                <el-input placeholder="Please input"></el-input>
+                <el-input v-model="input4" placeholder="Please input"></el-input>
             </el-form-item>
             <el-form-item label="Category" class="w-full">
-                <el-input placeholder="Please input"></el-input>
+                <el-input v-model="input5" placeholder="Please input"></el-input>
             </el-form-item>
             <el-form-item label="Stars" class="w-full">
-                <el-input type="textarea"></el-input>
+                <el-input v-model="input6" type="textarea"></el-input>
             </el-form-item>
             <el-form-item label="Tags" class="w-full">
                 <el-select v-model="value" multiple filterable allow-create default-first-option
@@ -160,14 +169,14 @@ const tableData = [
                 </el-select>
             </el-form-item>
             <el-form-item label="Duration" class="w-2/6">
-                <el-input :rows="2" placeholder="description" type="textarea"></el-input>
+                <el-input v-model="input7" :rows="2" placeholder="description" type="textarea"></el-input>
             </el-form-item>
             <el-form-item label="Release Date" class="w-2/6">
-                <el-date-picker type="datetime" placeholder="Select date and time">
+                <el-date-picker v-model="releaseDate" type="datetime" placeholder="Select date and time">
                 </el-date-picker>
             </el-form-item>
             <el-form-item label="Subscribe type">
-                <el-switch active-color="#13ce66" inactive-color="#ff4949">
+                <el-switch v-model="status" active-color="#13ce66" inactive-color="#ff4949">
                 </el-switch>
             </el-form-item>
             <el-button type="primary">Save</el-button><el-button type="info">Reset</el-button>

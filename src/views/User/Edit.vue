@@ -2,10 +2,10 @@
     <el-container class="details-box" style="background-color: white; padding: 1rem;align-items: center;">
         <el-form ref="form" :label-position="'left'" label-width="200px" class="w-full">
             <el-form-item label="ID" class="w-2/6">
-                <el-input placeholder="Please input"></el-input>
+                <el-input v-model="input1" placeholder="Please input"></el-input>
             </el-form-item>
             <el-form-item label="Nick name">
-                <el-input placeholder="Please input"></el-input>
+                <el-input v-model="input2" placeholder="Please input"></el-input>
             </el-form-item>
             <el-form-item label="Avatar">
                 <el-upload class="upload-demo">
@@ -15,7 +15,7 @@
             </el-form-item>
 
             <el-form-item label="E-mail" class="w-2/6">
-                <el-input placeholder="Please input"></el-input>
+                <el-input v-model="input3" placeholder="Please input"></el-input>
             </el-form-item>
             <el-form-item label="Date of registration" class="w-2/6">
                 <el-date-picker type="datetime" v-model="registerDate" placeholder="Select date and time">
@@ -39,7 +39,7 @@
         <el-form ref="form" :label-position="'left'" label-width="120px" class="w-full">
 
             <el-form-item label="User's message">
-                <el-input type="textarea" :rows="2" placeholder="Please input">
+                <el-input v-model="input4" type="textarea" :rows="2" placeholder="Please input">
                 </el-input>
             </el-form-item>
             <el-button type="primary">Save</el-button>
@@ -77,6 +77,9 @@ import { ref } from 'vue'
 import { Search, More, Edit, Delete } from '@element-plus/icons';
 import { ElContainer, ElIcon, ElButton, ElAvatar, ElTable, ElTableColumn, ElFormItem, ElUpload, ElDatePicker, ElCard, ElPagination, ElInput, ElForm, ElSwitch } from "element-plus"
 const input1 = ref('')
+const input2 = ref('')
+const input3 = ref('')
+const input4 = ref('')
 const status = ref(true);
 const registerDate = ref('')
 const subscriptionDate = ref('')

@@ -2,16 +2,16 @@
     <el-container class="details-box" style="background-color: white; padding: 1rem;align-items: center;">
         <el-form ref="form" :label-position="'left'" label-width="200px" class="w-full">
             <el-form-item label="ID" class="w-2/6">
-                <el-input placeholder="Please input"></el-input>
+                <el-input v-model="input1" placeholder="Please input"></el-input>
             </el-form-item>
             <el-form-item label="Name">
-                <el-input placeholder="Please input"></el-input>
+                <el-input v-model="input2" placeholder="Please input"></el-input>
             </el-form-item>
             <el-form-item label="Description">
-                <el-input type="textarea" :rows="2" placeholder="Please input"></el-input>
+                <el-input v-model="input3" type="textarea" :rows="2" placeholder="Please input"></el-input>
             </el-form-item>
             <el-form-item label="Page showed">
-                <el-input placeholder="Element design"></el-input>
+                <el-input v-model="input4" placeholder="Element design"></el-input>
             </el-form-item>
             <el-form-item label="Banners">
                 <el-upload class="upload-demo">
@@ -21,21 +21,21 @@
             </el-form-item>
 
             <el-form-item label="Start date" class="w-2/6">
-                <el-date-picker type="datetime" v-model="registerDate" placeholder="Select date and time">
+                <el-date-picker type="datetime" v-model="startDate" placeholder="Select date and time">
                 </el-date-picker>
             </el-form-item>
             <el-form-item label="End Date" class="w-2/6">
-                <el-date-picker type="datetime" v-model="activationDate" placeholder="Select date and time">
+                <el-date-picker type="datetime" v-model="endDate" placeholder="Select date and time">
                 </el-date-picker>
             </el-form-item>
             <el-form-item label="Show time" class="w-2/6">
-                <el-input placeholder="Please input"></el-input>
+                <el-input v-model="input5" placeholder="Please input"></el-input>
             </el-form-item>
             <el-form-item label="Budget" class="w-2/6">
-                <el-input placeholder="Please input"></el-input>
+                <el-input v-model="input6" placeholder="Please input"></el-input>
             </el-form-item>
             <el-form-item label="Impressions" class="w-2/6">
-                <el-input placeholder="Please input"></el-input>
+                <el-input v-model="input7" placeholder="Please input"></el-input>
             </el-form-item>
             <el-form-item label="Status">
                 <el-switch v-model="status" class="ml-2" style="--el-switch-on-color: #13ce66; --el-switch-off-color: #ff4949" />
@@ -55,10 +55,15 @@ import { ref } from 'vue'
 import { Search, More, Edit, Delete } from '@element-plus/icons';
 import { ElContainer, ElIcon, ElButton, ElAvatar, ElTable, ElTableColumn, ElFormItem, ElUpload, ElDatePicker, ElCard, ElPagination, ElInput, ElForm, ElSwitch } from "element-plus"
 const input1 = ref('')
+const input2 = ref('')
+const input3 = ref('')
+const input4 = ref('')
+const input5 = ref('')
+const input6 = ref('')
+const input7 = ref('')
 const status = ref(true);
-const registerDate = ref('')
-const subscriptionDate = ref('')
-const activationDate = ref('')
+const startDate = ref('')
+const endDate = ref('')
 const radio1 = { radio1: 'New York' }
 function handleRemove(file, fileList) {
     console.log(file, fileList);

@@ -2,27 +2,27 @@
     <el-container class="details-box" style="background-color: white; padding: 1rem;align-items: center;">
         <el-form ref="form" :label-position="'left'" label-width="120px" class="w-full">
             <el-form-item label="ID" class="w-2/6">
-                <el-input placeholder="Please input"></el-input>
+                <el-input v-model="input1" placeholder="Please input"></el-input>
             </el-form-item>
             <el-form-item label="Title">
-                <el-input :rows="2" type="textarea" placeholder="Please input" />
+                <el-input :rows="2" v-model="input2" type="textarea" placeholder="Please input" />
             </el-form-item>
 
             <el-form-item label="Description">
-                <el-input :rows="2" type="textarea" placeholder="Please input" />
+                <el-input :rows="2" type="textarea" v-model="input3" placeholder="Please input" />
             </el-form-item>
             <el-form-item label="Date" class="w-2/6">
-                <el-date-picker type="datetime" placeholder="Select date and time">
+                <el-date-picker type="datetime" v-model="date" placeholder="Select date and time">
                 </el-date-picker>
             </el-form-item>
             <el-form-item label="Price" class="w-2/6">
-                <el-input placeholder="Please input"></el-input>
+                <el-input placeholder="Please input" v-model="input4"></el-input>
             </el-form-item>
             <el-form-item label="Old price" class="w-2/6">
-                <el-input placeholder="Please input"></el-input>
+                <el-input placeholder="Please input" v-model="input5"></el-input>
             </el-form-item>
             <el-form-item label="Status">
-                <el-switch class="ml-2" style="--el-switch-on-color: #13ce66; --el-switch-off-color: #ff4949" />
+                <el-switch v-model="status" class="ml-2" style="--el-switch-on-color: #13ce66; --el-switch-off-color: #ff4949" />
             </el-form-item>
             <section style="margin-top: 25px;">
                 <el-button type="primary" style="width:150px">Save</el-button>
@@ -38,6 +38,12 @@ import { ref } from 'vue'
 import { Search, More, Edit, Delete } from '@element-plus/icons';
 import { ElContainer, ElButton,  ElInput, ElForm, ElSwitch, ElFormItem, ElRadioGroup, ElSelect, ElDatePicker, ElRadioButton,ElUpload } from "element-plus"
 const input1 = ref('')
+const input2 = ref('')
+const input3 = ref('')
+const input4 = ref('')
+const input5 = ref('')
+const status = ref(true);
+const date = ref('')
 const radio1 = { radio1: 'New York' }
 function handleRemove(file, fileList) {
     console.log(file, fileList);
