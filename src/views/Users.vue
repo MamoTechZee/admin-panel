@@ -58,7 +58,7 @@
     </el-container>
 </template>
 
-<script setup>
+<script setup >
 import { ref } from 'vue';
 import { NoSymbolIcon } from '@heroicons/vue/24/solid'
 import { Search, More, Edit, Delete, CircleCloseFilled } from '@element-plus/icons';
